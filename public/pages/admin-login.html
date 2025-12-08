@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — CITC Online Voting</title>
+  <link rel="stylesheet" href="../css/adminLogin.css" />
+</head>
+<body>
+  <div class="background-image" aria-hidden="true"></div>
+  
+  <div class="animated-bg" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="top-section">
+      <div class="logo-box">
+        <img src="../image/images.png" alt="CITC Logo" class="logo" />
+      </div>
+      <p class="login-text">CITC ADMIN PORTAL</p>
+      <p class="subtitle">Administrative Access</p>
+    </div>
+
+    <div class="welcome-section">
+      <h1>Admin Login</h1>
+      <div class="underline"></div>
+      <div class="underline second"></div>
+
+      <form class="login-form" id="adminLoginForm" novalidate>
+        <input id="adminUsername" type="text" placeholder="Admin Username" required />
+        <input id="adminPassword" type="password" placeholder="Admin Password" required />
+        <p id="errorMsg" style="color: #dc2626; font-size: 13px; margin: 0; min-height: 18px;"></p>
+        <button type="submit" class="btn-submit">Sign In</button>
+      </form>
+
+      <p class="back-note">
+        <a href="login.html" class="back-link">← Back to User Login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/adminLogin.js" defer></script>
+</body>
+</html>

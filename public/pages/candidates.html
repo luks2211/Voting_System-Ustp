@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="../css/candidates.css" />
+<title>Candidates — CITC Online Voting</title>
+</head>
+<body>
+  <div class="wrap">
+    <header class="header" role="banner">
+      <div class="brand">
+        <img src="../image/images.png" alt="CITC Logo" class="brand-logo" />
+        <span>CITC Online Voting</span>
+      </div>
+
+      <div class="header-actions" role="search">
+        <input class="search" type="search" placeholder="Search candidates" aria-label="Search">
+        <div class="menu-wrapper">
+          <button class="hamburger" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-haspopup="true">☰</button>
+          <nav class="menu-dropdown" id="menuDropdown" role="menu">
+            <a href="frontpage.html" role="menuitem">Home</a>
+            <a href="candidates.html" role="menuitem">Candidates</a>
+            <a href="votenow.html" role="menuitem">Vote Now</a>
+            <button class="logout" id="logoutBtn" role="menuitem">Logout</button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="tabs-section">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-position="0" role="tab">PRESIDENT</button>
+          <button class="tab" data-position="1" role="tab">VICE PRESIDENT</button>
+          <button class="tab" data-position="2" role="tab">SECRETARY</button>
+          <button class="tab" data-position="3" role="tab">TRESURER</button>
+          <button class="tab" data-position="4" role="tab">AUDITOR</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="position-header">
+          <h1 id="positionTitle">PRESIDENT</h1>
+          <span class="count" id="positionCount">0 candidates</span>
+        </div>
+
+        <div class="carousel-container">
+          <button class="carousel-arrow prev" id="sidePrev" aria-label="Previous candidate">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          
+          <div class="stage" id="stageCards"></div>
+          
+          <button class="carousel-arrow next" id="sideNext" aria-label="Next candidate">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="dots" id="dotContainer"></div>
+
+        <div class="action-footer">
+          <a href="vote-now.html" class="vote-button">VOTE NOW</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/candidates.js" defer></script>
+</body>
+</html>

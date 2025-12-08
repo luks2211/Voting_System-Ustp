@@ -1,0 +1,12 @@
+{
+  "name": "voting-system",
+  "version": "1.0.0",
+  "description": "CITC Online Voting System",
+  "scripts": {
+    "dev": "node api.js",
+    "start": "node api.js"
+  },
+  "keywords": ["voting", "system"],
+  "author": "",
+  "license": "ISC"
+}

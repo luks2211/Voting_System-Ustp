@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+  <script>
+    // Check if admin is logged in
+    const adminSession = localStorage.getItem('adminSession');
+    if (!adminSession) {
+      window.location.href = 'adminLogin.html';
+    }
+  </script>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="../image/images.png" alt="Logo" class="brand-logo" />
+      <h2>CITC Admin</h2>
+    </div>
+
+    <nav>
+      <button data-view="dashboard" class="active">Dashboard</button>
+      <button data-view="candidates">Manage Candidates</button>
+      <button data-view="users">Manage Users</button>
+      <button data-view="schedule">Set Voting Schedule</button>
+      <button data-view="votes">Manage Votes</button>
+      <button id="logoutBtn" class="danger">Log out</button>
+    </nav>
+  </aside>
+
+  <main class="main">
+    <section id="dashboard" class="view active">
+      <h1>Admin Dashboard</h1>
+      <p>Select an action below</p>
+      <div class="actions">
+        <button data-go="candidates" class="action-card">Manage Candidates</button>
+        <button data-go="users" class="action-card">Manage Users</button>
+        <button data-go="schedule" class="action-card">Set Schedule</button>
+        <button data-go="votes" class="action-card">Manage Votes</button>
+      </div>
+      <div class="status">
+        <div class="status-item">Voting status: <strong id="votingStatus">Not started</strong></div>
+        <div class="status-item">Active schedule: <span id="scheduleSummary">Not set</span></div>
+        <div class="status-item">Total candidates: <strong id="candidateCount">0</strong></div>
+      </div>
+    </section>
+
+    <section id="candidates" class="view">
+      <h1>Manage Candidates</h1>
+      
+      <div class="candidates-tabs">
+        <button class="tab-btn active" data-position="0">PRESIDENT</button>
+        <button class="tab-btn" data-position="1">VICE PRESIDENT</button>
+        <button class="tab-btn" data-position="2">SECRETARY</button>
+        <button class="tab-btn" data-position="3">TRESURER</button>
+        <button class="tab-btn" data-position="4">AUDITOR</button>
+      </div>
+
+      <form id="candidateForm" class="candidate-form">
+        <div class="form-group">
+          <label for="candidateName">Candidate Name:</label>
+          <input id="candidateName" type="text" placeholder="Enter full name" required>
+        </div>
+        <button type="submit" class="btn-primary">Add Candidate</button>
+      </form>
+
+      <div class="candidates-list">
+        <h3 id="positionLabel">PRESIDENT Candidates</h3>
+        <ul id="candidateList" class="list"></ul>
+      </div>
+
+      <button class="btn-secondary" onclick="document.querySelector('[data-view=dashboard]').click()">Back to Dashboard</button>
+    </section>
+
+    <section id="users" class="view">
+      <h1>Manage Users</h1>
+      <form id="userForm" class="inline-form">
+        <input id="userName" placeholder="Username" required>
+        <input id="userEmail" placeholder="Email" required>
+        <button type="submit">Add New User</button>
+      </form>
+      <div id="usersList" class="list"></div>
+      <button class="btn-secondary" onclick="document.querySelector('[data-view=dashboard]').click()">Back to Dashboard</button>
+    </section>
+
+    <section id="schedule" class="view">
+      <h1>Set Voting Schedule</h1>
+      <form id="scheduleForm" class="inline-form">
+        <label>Start: <input id="startAt" type="datetime-local" required></label>
+        <label>End: <input id="endAt" type="datetime-local" required></label>
+        <button type="submit">Save Schedule</button>
+      </form>
+      <div id="scheduleMsg" class="muted"></div>
+      <button class="btn-secondary" onclick="document.querySelector('[data-view=dashboard]').click()">Back to Dashboard</button>
+    </section>
+
+    <section id="votes" class="view">
+      <h1>Manage Votes</h1>
+
+      <div class="section-group">
+        <h3>Pre-Voting / Set up Process</h3>
+        <div class="controls">
+          <button id="startVoting" class="primary">Start Voting</button>
+          <button id="endVoting" class="danger" disabled>End Voting</button>
+        </div>
+      </div>
+
+      <div class="section-group">
+        <h3>Simulate Votes (for testing)</h3>
+        <p class="muted">Cast test votes manually</p>
+        <div id="simulate" class="simulate" style="display:flex;gap:12px;align-items:center">
+          <select id="voteFor" style="flex:1"></select>
+          <button id="castVote" class="primary">Cast vote (simulate)</button>
+        </div>
+      </div>
+
+      <div class="section-group">
+        <h3>Monitor and Control Process</h3>
+        <div id="monitorList" class="list"></div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:12px;">
+        <button id="exportVotes" class="btn-primary">Export Votes</button>
+        <button id="clearVotes" class="btn-secondary">Clear Votes</button>
+      </div>
+
+      <button class="btn-secondary" onclick="document.querySelector('[data-view=dashboard]').click()">Return to Dashboard</button>
+    </section>
+  </main>
+
+  <script src="../js/admin.js" defer></script>
+</body>
+</html>

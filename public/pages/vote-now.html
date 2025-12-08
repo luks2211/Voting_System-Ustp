@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>CITC ONLINE VOTING</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/votenow.css">
+</head>
+<body>
+  <main class="container" role="main">
+    <header class="header" aria-labelledby="title">
+      <h1 id="title">CITC ONLINE VOTING</h1>
+      <p>Your Vote, Your Voice – Online and Secure</p>
+    </header>
+
+    <form id="ballot" autocomplete="off" novalidate>
+      <!-- For President -->
+      <section class="section" id="section-0" data-index="0">
+        <div class="chip">FOR PRESIDENT</div>
+        <div class="candidates" role="radiogroup" aria-label="President candidates">
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="president" value="candidate-a" required></div>
+            <div class="avatar" aria-hidden="true">A</div>
+            <div class="name">Name</div>
+          </label>
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="president" value="candidate-b"></div>
+            <div class="avatar" aria-hidden="true">B</div>
+            <div class="name">Name</div>
+          </label>
+        </div>
+        <div class="controls">
+          <div><button type="button" class="btn" data-action="prev" disabled>← Previous</button></div>
+          <div><button type="button" class="btn primary" data-action="next">Next →</button></div>
+        </div>
+      </section>
+
+      <!-- Internal VP -->
+      <section class="section hidden" id="section-1" data-index="1">
+        <div class="chip">FOR INTERNAL VICE PRESIDENT</div>
+        <div class="candidates" role="radiogroup" aria-label="Internal VP candidates">
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="ivp" value="candidate-c" required></div>
+            <div class="avatar">C</div>
+            <div class="name">Name</div>
+          </label>
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="ivp" value="candidate-d"></div>
+            <div class="avatar">D</div>
+            <div class="name">Name</div>
+          </label>
+        </div>
+        <div class="controls">
+          <div><button type="button" class="btn" data-action="prev">← Previous</button></div>
+          <div><button type="button" class="btn primary" data-action="next">Next →</button></div>
+        </div>
+      </section>
+
+      <!-- External VP -->
+      <section class="section hidden" id="section-2" data-index="2">
+        <div class="chip">FOR EXTERNAL VICE PRESIDENT</div>
+        <div class="candidates" role="radiogroup" aria-label="External VP candidates">
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="evp" value="candidate-e" required></div>
+            <div class="avatar">E</div>
+            <div class="name">Name</div>
+          </label>
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="evp" value="candidate-f"></div>
+            <div class="avatar">F</div>
+            <div class="name">Name</div>
+          </label>
+        </div>
+        <div class="controls">
+          <div><button type="button" class="btn" data-action="prev">← Previous</button></div>
+          <div><button type="button" class="btn primary" data-action="next">Next →</button></div>
+        </div>
+      </section>
+
+      <!-- Treasurer -->
+      <section class="section hidden" id="section-3" data-index="3">
+        <div class="chip">FOR TREASURER</div>
+        <div class="candidates" role="radiogroup" aria-label="Treasurer candidates">
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="treasurer" value="candidate-g" required></div>
+            <div class="avatar">G</div>
+            <div class="name">Name</div>
+          </label>
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="treasurer" value="candidate-h"></div>
+            <div class="avatar">H</div>
+            <div class="name">Name</div>
+          </label>
+        </div>
+        <div class="controls">
+          <div><button type="button" class="btn" data-action="prev">← Previous</button></div>
+          <div><button type="button" class="btn primary" data-action="next">Next →</button></div>
+        </div>
+      </section>
+
+      <!-- Auditor -->
+      <section class="section hidden" id="section-4" data-index="4">
+        <div class="chip">FOR AUDITOR</div>
+        <div class="candidates" role="radiogroup" aria-label="Auditor candidates">
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="auditor" value="candidate-i" required></div>
+            <div class="avatar">I</div>
+            <div class="name">haha</div>
+          </label>
+          <label class="card">
+            <div class="radio-wrap"><input type="radio" name="auditor" value="candidate-j"></div>
+            <div class="avatar">J</div>
+            <div class="name">Name</div>
+          </label>
+        </div>
+        <div class="controls">
+          <div><button type="button" class="btn" data-action="prev">← Previous</button></div>
+          <div><button type="submit" class="btn primary">Submit →</button></div>
+        </div> 
+      </section>
+
+    </form>
+  </main>
+<script src="../js/votenow.js" defer></script>
+</body>
+</html>
